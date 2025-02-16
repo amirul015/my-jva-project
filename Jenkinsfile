@@ -15,7 +15,7 @@ pipeline {
         stage('Docker Build & push') {
            steps {
              scripts {  
-                 withDockerRegistry(credentialsId: 'docker_cred') {
+                 withDockerRegistry([credentialsId: 'docker_cred',url: 'https://app.docker.com/]) {
                     sh "docker build -t my-docker-repo/app:latest ."
                     sh "docker push my-docker-repo/app:latest"
                   }
