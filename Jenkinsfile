@@ -16,7 +16,7 @@ pipeline {
            steps {
              script {  
                  withDockerRegistry(credentialsId: 'docker_cred') {
-                    sh "docker build -t my-docker-repo/app:latest amirul135/app:latest"
+                    sh "docker build -t amirul135/app:latest ."
                     sh "docker push amirul135/app:latest"
                   }
                }   
